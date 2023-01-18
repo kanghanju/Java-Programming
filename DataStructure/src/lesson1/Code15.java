@@ -16,7 +16,7 @@ public class Code15 {
 			int tmp = sc.nextInt();
 			
 			int j = i - 1;
-			while( j >= 0 && array[j] > tmp ) {//j>=0을 뒤에 작성하면 에러남
+			while(array[j] > tmp && j>=0) {//j>=0을 뒤에 작성하면 에러남
 				array[j+1] = array[j];
 				j--;
 			}

@@ -17,8 +17,8 @@ public class Code14 {
 		}
 		sc.close();
 		
-		/*
-		 for(int i = n-1 ; i>0 ; i--) {
+		
+		 /*for(int i = n-1 ; i>0 ; i--) {
 			for(int j = 0; j<i ; j++) {
 				if(array[j] > array[j+1]) {
 					int tmp = array[j];
@@ -27,15 +27,17 @@ public class Code14 {
 				}
 			}
 		}*/
-		for(int i = 0; i<= n-1;i++) {
-			for(int j = i+1; j<=n-1;j++) {
-				if(array[i] > array[j]) {
-					int tmp = array[i];
-					array[i] = array[j];
-					array[j] = tmp;
+		
+		for(int i = 0; i<n-1;i++) {
+			for(int j = 0; j<n-1-i ; j++) {
+				if(array[j] > array[j+1]) {
+					int tmp = array[j];
+					array[j] = array[j+1];
+					array[j+1]=tmp;
 				}
 			}
 		}
+		
 		
 		System.out.println("Sorted data:");
 		for(int i = 0; i<n; i++) {

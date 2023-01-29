@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
-public class Code22 {
+public class Code23 {
 	/*대부분의 경우 문제를 푸는 프로그램을 작성할 때 
 	 * 제일 먼저 생각해야 할 일은 자료구조이다
 	 * 데이터를 저장할 변수를 먼저 정의한다*/
@@ -54,14 +54,8 @@ public class Code22 {
 			Scanner inFile = new Scanner(new File(fileName));
 			while(inFile.hasNext()) {
 				String str = inFile.next(); //파일에 있는 string들을 읽고 변수에 넣는다
-					
 				
-				String trimmed = trimming(str);
-				
-				if(trimmed != null) {
-					String t = trimmed.toLowerCase(); //애초에 저장할때 단어를 소문자로 바꿔서 저장
-					addWord(t);//단어가 목록에 없으면 추가한다. 있으면 추가 안한다
-				}
+				addWord(str);//단어가 목록에 없으면 추가한다. 있으면 추가 안한다
 			}
 			
 			inFile.close();
@@ -71,39 +65,13 @@ public class Code22 {
 		}
 	}
 	
-	static String trimming(String str) {
-		
-		int i = 0 , j= str.length()-1;
-		while( i<str.length() && !Character.isLetter(str.charAt(i))) { //while i-th character is not letter
-			//Character.isLetter(str.charAt(i)) 괄호안에 있는 char가 알파벳인지 아닌지를 검사해준다
-			i++;
-		}
-		
-		while(j>=0 && !Character.isLetter(str.charAt(j))) {
-			j--;
-		}
-		
-		if(i>j)
-			return null;
-		 
-		return str.substring(i,j+1);
-	}
-
 	static void addWord(String str) {
 		int index = findWord(str); //returns -1 if not found
-		
-		
 		if(index != -1) {//found word[index]==str
 			count[index]++;
-		}
-		else {//단어들을 알파벳순으로 정렬하기 위해 항상 정렬된 상태를 유지하도록 삽입하는 방법을 사용했다
-			int i = cnt-1;
-			for(;i>=0 && words[i].compareToIgnoreCase(str)>0;i--) {
-				words[i+1]  = words[i];
-				count[i+1] = count[i];
-			}
-			words[i+1] = str;
-			count[i+1] = 1;
+		}else {
+			words[cnt] = str;
+			count[cnt] = 1;
 			cnt++;
 		}
 	}

@@ -1,4 +1,4 @@
-package practice.Sort;
+package practice.sort;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.Collections;

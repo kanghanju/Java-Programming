@@ -43,7 +43,6 @@ public class KeepTheLead {
 
         int head = 0;
         int ans = 0;
-        char max;
 
         for(int i = 1; i<A.length;i++){
         	

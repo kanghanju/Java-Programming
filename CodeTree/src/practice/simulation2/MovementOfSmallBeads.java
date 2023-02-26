@@ -52,6 +52,26 @@ public class MovementOfSmallBeads {
                 t--;
             }
         }
+        
+        /*내가 전에 쓴 코드:
+         * 벽에 부딪힘과 동시에 끝나는 순간에 대해 고민해보삼!!
+         * 위의 코드는 부딪히는 동시에 방향이 바뀌고 t가 감소하며 끝나는데 
+         * 아래 코드는 끝나지 않고 t가 -1, x,y도 한 칸씩 더 전진한 상태로 끝나게 된다
+        while(t>0){
+            int nx = x+dx[direction];
+            int ny = y+dy[direction];
+            
+            if(!inRange(nx,ny)){
+                direction = 3-direction;
+                t--;
+            }
+            
+            x += dx[direction];
+            y += dy[direction];
+            t--;
+        }
+        */
+
 
         System.out.print((x+1)+" "+(y+1));
 	}

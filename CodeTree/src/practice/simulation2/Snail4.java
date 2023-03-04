@@ -13,7 +13,8 @@ public class Snail4 {
 
     public static void snail(){
         for(int i = 0; i<n*m-1;i++){
-        	
+        	if(cnt=='Z'+1)
+                cnt='A';
         	
             int nx = x+dx[dirNum];
             int ny = y+dy[dirNum];

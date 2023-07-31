@@ -1,4 +1,4 @@
-package dataStructure.dynamicArray;
+package dataStructure.arrayAndLinkedList;
 
 import java.util.ArrayList;
 import java.util.Scanner;

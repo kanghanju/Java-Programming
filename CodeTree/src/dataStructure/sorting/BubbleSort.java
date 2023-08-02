@@ -1,4 +1,4 @@
-package dataStructure.sort;
+package dataStructure.sorting;
 import java.util.Scanner;
 
 public class BubbleSort {

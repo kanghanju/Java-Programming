@@ -1,4 +1,4 @@
-package dataStructure.sort;
+package dataStructure.sorting;
 import java.util.*;
 
 public class InsertionSort {
